@@ -4,11 +4,13 @@ import copy
 import os
 import os.path as osp
 import time
+import pprint
 
 import mmcv
 import torch
 from mmcv import Config
 from mmcv.runner import init_dist
+from easydict import EasyDict as edict
 
 from mmdet import __version__
 from mmdet.apis import set_random_seed, train_detector
@@ -95,6 +97,7 @@ def main():
     timestamp = time.strftime('%Y%m%d_%H%M%S', time.localtime())
     log_file = osp.join(cfg.work_dir, '{}.log'.format(timestamp))
     logger = get_root_logger(log_file=log_file, log_level=cfg.log_level)
+    logger.info(pprint.pformat(edict(cfg)))
 
     # init the meta dict to record some important information such as
     # environment info and seed, which will be logged
