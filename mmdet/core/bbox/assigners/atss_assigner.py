@@ -180,7 +180,8 @@ class ATSSAssigner(BaseAssigner):
             assigned_gt_inds[pos_inds] = ii + 1 # 1-based
 
         # 5. update ignore candidate box
-        assigned_gt_inds[ignore_bool_index] = -1
+        if ignore_bool_index is not None:
+            assigned_gt_inds[ignore_bool_index] = -1
 
         if gt_labels is not None:
             assigned_labels = assigned_gt_inds.new_zeros((num_bboxes,))
