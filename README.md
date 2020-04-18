@@ -1,7 +1,9 @@
 # ATSS-Pytorch
 
 
-paper address: https://mmdetection.readthedocs.io/  
+Bridging the Gap Between Anchor-based and Anchor-free Detection via Adaptive Training Sample Selection
+
+paper address: https://arxiv.org/pdf/1912.02424.pdf 
 
 ## Requirements
 
@@ -84,4 +86,4 @@ bash scripts/test.sh
 
 
 [1] 1x and 2x mean the model is trained for 90K and 180K iterations, respectively.  
-[2] (#A=1) mean retinanet only has one 8S square anchor in each level (S is stride)
+[2] (A=1) mean retinanet only has one 8S square anchor in each level (S is stride)

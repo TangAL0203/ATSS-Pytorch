@@ -117,3 +117,7 @@ work_dirs/
 # Pytorch
 *.pth
 
+# others
+cluster_configs
+cluster_train.sh
+scripts/local_train.sh
